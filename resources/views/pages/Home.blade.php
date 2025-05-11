@@ -14,18 +14,48 @@
 </head>
 <body class="font-archivo text-gray-800 bg-pink-50">
   <!-- Header -->
-  <header class="flex items-center justify-between p-6 bg-white shadow-md">
-    <div>
-      <img src="loggowebsite.jpg" alt="DSC Logo" class="h-20 w-auto">
+  <header class="bg-white shadow-md px-4 py-3">
+  <div class="max-w-7xl mx-auto flex items-center justify-between relative">
+
+    <!-- Logo (left) -->
+    <div class="flex-shrink-0">
+      <img src="logol.png" alt="DSC Logo" class="h-10 mt-2 mb-3">
     </div>
-    <nav class="space-x-6 text-2xl font-semibold">
-      <a href="#" class="hover:text-red-700">Home</a>
-      <a href="#" class="hover:text-red-700">Services</a>
-      <a href="#" class="hover:text-red-700">Gallery</a>
-      <a href="#" class="hover:text-red-700">Contact</a>
+
+    <!-- Centered Nav (desktop) -->
+    <nav class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-6 text-lg font-semibold">
+      <a href="#" class="hover:text-red-700">Products</a>
+      <a href="#" class="hover:text-red-700">Graphic Services</a>
+      <a href="#" class="hover:text-red-700">Contact Us</a>
+      <a href="#" class="hover:text-red-700">About Us</a>
     </nav>
-    <button class="px-4 py-2 text-2xl bg-black text-white rounded hover:bg-gray-700">Login</button>
-  </header>
+
+    <!-- Login Button (right) -->
+    <div class="hidden md:block">
+      <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700">
+        Login
+      </button>
+    </div>
+
+    <!-- Hamburger Button (mobile only) -->
+    <button id="menu-toggle" class="md:hidden text-3xl">
+      &#9776;
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden flex flex-col mt-4 space-y-3 text-lg font-semibold px-4">
+    <a href="#" class="hover:text-red-700">Products</a>
+    <a href="#" class="hover:text-red-700">Graphic Services</a>
+    <a href="#" class="hover:text-red-700">Contact Us</a>
+    <a href="#" class="hover:text-red-700">About Us</a>
+    <button class="w-full py-2 bg-black text-white rounded hover:bg-gray-700">
+      Login
+    </button>
+  </div>
+</header>
+
+
 
   <section class="relative h-[80vh]">
   <section class="relative h-[80vh]">
@@ -133,11 +163,11 @@
 
   <!-- Footer -->
   <footer class="bg-black text-white py-8 px-6">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between">
-      <div>
-        <h3 class="text-xl font-bold mb-2">DavaoStickerCustom</h3>
-        <p class="text-sm">Providing premium sticker and wrap solutions that help you stand out.</p>
-      </div>
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between">
+    <div class="flex flex-col items-start mb-4 md:mb-0">
+      <img src="logo2.png" alt="DSC LogoFooter" class="h-12 w-auto mb-4">
+      <p class="text-sm">Creative solutions made visual. We craft stunning designs that elevate <br> your brand logos, websites, marketing materials, and more. <br> Let's bring your vision to life.</p>
+    </div>
       <div class="mt-4 md:mt-0">
         <h4 class="font-semibold mb-2">Product</h4>
         <ul class="text-sm space-y-1">
@@ -163,9 +193,18 @@
         </ul>
       </div>
     </div>
-    <div class="mt-6 text-center text-xs text-gray-400">
-      &copy; 2025 Stickart Graphics. All rights reserved. | Terms & Conditions | Privacy Policy
+    <div class="mt-12 text-center text-xs text-gray-400">
+      &copy; 2025 Davao Sticker Custom. All rights reserved. | Terms & Conditions | Privacy Policy
     </div>
   </footer>
+  <script>
+  const toggleButton = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  toggleButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 </body>
+
 </html>

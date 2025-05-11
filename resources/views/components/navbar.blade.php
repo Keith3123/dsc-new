@@ -7,6 +7,9 @@
         <title>Laravel</title>
     </head>
     <body>
-       
+       <div class="p-6">
+            @yield('content')
+       </div>
     </body>
-</html>
+</html> 
+

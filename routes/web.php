@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageControlle;
+use App\Http\Controllers\PageController;
 
 
 
-Route::get('/', [PageControlle::class, 'home']);
-Route::get('/contact', [PageControlle::class, 'contacts']);
-Route::get('/about', [PageControlle::class, 'aboutus']);
+Route::get('/Home', [PageController::class, 'home']);
+Route::get('/contact', [PageController::class, 'contacts']);
+Route::get('/about', [PageController::class, 'aboutus']);
