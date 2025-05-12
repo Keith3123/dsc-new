@@ -10,10 +10,14 @@ class PageController extends Controller
     {
         return view('pages.home');
     }
-
-    public function contacts()
+    public function product()
     {
-        return view('pages.ContactUs');
+        return view('pages.Product');
+    }
+
+    public function proj()
+    {
+        return view('pages.Project');
     }
 
     public function aboutus()
@@ -21,13 +25,18 @@ class PageController extends Controller
         return view('pages.AboutUs');
     }
 
-    public function login()
+     public function contacts()
     {
-        return view('pages.login');
+        return view('pages.Contact');
     }
 
-    public function Register()
+     public function services()
     {
-        return view('pages.register');
+        return view('pages.Service');
+    }
+
+     public function loc()
+    {
+        return view('pages.Location');
     }
 }
