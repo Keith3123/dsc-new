@@ -25,18 +25,10 @@ class PageController extends Controller
         return view('pages.AboutUs');
     }
 
-     public function contacts()
+    public function services() 
     {
-        return view('pages.Contact');
+        return view('pages.GraphicServices');
     }
 
-     public function services()
-    {
-        return view('pages.Service');
-    }
 
-     public function loc()
-    {
-        return view('pages.Location');
-    }
 }
