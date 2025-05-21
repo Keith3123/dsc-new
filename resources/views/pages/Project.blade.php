@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Our Projects')
+@section('title', 'Projects | Davao Sticker Custom')
 
 @section('content')
 <section class="w-full py-12 bg-white">

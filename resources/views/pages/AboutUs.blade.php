@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
-@section('title', 'About Us - Davao Sticker Custom')
+@section('title', 'About Us | Davao Sticker Custom')
 
 @section('content')
 <main class="max-w-6xl mx-auto py-20 px-6">
     <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
         {{-- Text Content --}}
         <div class="md:w-1/2 text-center md:text-left">
-            <h1 class="text-xl font-semibold mb-6">About Us</h1>
+            <h1 class="text-xl font-semibold mb-6 hover:text-red-700">About Us</h1>
             <p class="mb-6 text-base leading-relaxed">
                 At Davao Sticker Custom, we bring your ideas to life through high-quality custom printing and design. From vinyl stickers and business signage to custom shirts and decals, our passion is helping brands stand out. Locally rooted and creatively driven, we’re committed to delivering fast, affordable, and reliable printing solutions for individuals and businesses across Davao City.
             </p>
 
-            <h2 class="text-lg font-semibold mb-4">Our Story</h2>
-            <p class="text-base leading-relaxed">
+            <h2 class="text-lg font-semibold mb-6 hover:text-red-700">Our Story</h2>
+            <p class="mb-6 text-base leading-relaxed">
                 What began as a small local venture in the heart of Davao City has grown into one of the region’s go-to names for quality custom prints. Located at <strong>R. Castillo St., Brgy Ubalde, Agdao, Davao City</strong>, Davao Sticker Custom was built on the belief that creativity should be accessible and affordable. With a passion for design and a commitment to top-tier service, we’ve helped countless individuals and businesses bring their visions to life — one sticker, shirt, and sign at a time.
             </p>
         </div>

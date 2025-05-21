@@ -6,18 +6,8 @@ use App\Http\Controllers\PageController;
 
 
 Route::get('/', [PageController::class, 'home']);
-Route::get('/Products', [PageController::class, 'product']);
-Route::get('/projects', [PageController::class, 'proj']);
-Route::get('/graphic-services', [PageController::class, 'services']);
-
-Route::get('/locations', [PageController::class, 'loc']);
-
-
-Route::get('/', function () {
-    return view('pages.home');  // This points to resources/views/pages/home.blade.php
-});
-
-Route::get('/about-us', function () {
-    return view('pages.AboutUs');
-});
+Route::get('/products', [PageController::class, 'product'])->name('pages.product');
+Route::get('/projects', [PageController::class, 'proj'])-> name('pages.proj');
+Route::get('/graphic-services', [PageController::class, 'services'])->name('pages.services');
+Route::get('/about-us', [PageController::class, 'aboutus'])->name('pages.aboutus');
 

@@ -1,10 +1,14 @@
 @extends('layouts.app') 
 
-@section('title', 'Our Graphic Services')
+@section('title', 'Graphic Design Services | Davao Sticker Custom')
 
 @section('content')
 <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-  <h1 class="text-3xl font-bold text-center mb-12">Our Graphics Services</h1>
+  <h1 class="text-3xl font-bold text-center mb-4">Graphics Design Services</h1>
+  
+  <p class="text-center text-gray-700 max-w-2xl mx-auto mb-12">
+      Professional design solutions to elevate your brand identity, create stunning visuals, <br> and make your ideas come to life with our expert design team.
+  </p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
     <!-- SERVICE 1 -->

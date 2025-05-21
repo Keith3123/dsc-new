@@ -4,11 +4,13 @@
     
     <!-- Logo and Description -->
     <div class="flex flex-col items-start mb-6 md:mb-0 md:w-1/3 px-6">
-      <img src="logo2.png" alt="DSC LogoFooter" class="h-14 w-auto mb-4">
-      <p class="text-base leading-relaxed text-gray-300">
-        Creative solutions made visual. We craft stunning designs that elevate
-        your brand logos, websites, marketing materials, and more. Let's bring your vision to life.
-      </p>
+      <a href="/">
+        <img src="logo2.png" alt="DSC LogoFooter" class="h-14 w-auto mb-4">
+      </a>
+        <p class="text-base leading-relaxed text-gray-300">
+          Creative solutions made visual. We craft stunning designs that elevate
+          your brand logos, websites, marketing materials, and more. Let's bring your vision to life.
+        </p>
     </div>
 
     <!-- Navigation Columns -->
@@ -16,7 +18,9 @@
       
       <!-- Product -->
       <div>
+        <a href="/products">
         <h4 class="text-white font-semibold mb-3 hover:underline cursor-pointer text-xl">Product</h4>
+        </a>
         <ul class="space-y-2">
           <li><a href="#" class="text-gray-300 hover:text-white">Stickers</a></li>
           <li><a href="#" class="text-gray-300 hover:text-white">Vehicle Wraps</a></li>
@@ -26,7 +30,9 @@
 
       <!-- About -->
       <div>
+        <a href="/about-us">
         <h4 class="text-white font-semibold mb-3 hover:underline cursor-pointer text-xl">About</h4>
+        </a>
         <ul class="space-y-2">
           <li><a href="#" class="text-gray-300 hover:text-white">Our Story</a></li>
           <li><a href="#" class="text-gray-300 hover:text-white">Team</a></li>

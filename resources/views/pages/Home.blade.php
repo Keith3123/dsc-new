@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'Official Page | Davao Sticker Custom')
 
-@section('content')
+@section('content') 
 
 
    {{-- Hero Section --}}
@@ -13,8 +13,8 @@
         <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-2">Stick with Style. Stand Out Boldly</h1>
         <p class="text-lg md:text-2xl text-gray-800">Custom Stickers, Decals & Graphics Made to Elevate Your Brand, Gear, and Vibe.</p>
       </div>
-      <div class="mt-6 font-medium text-3xl">
-        <button class="px-6 py-2 bg-black text-white rounded hover:bg-gray-700 transition mr-2">Shop now</button>
+      <div class="mt-6 font-medium text-3xl flex-col sm:flew-row items-center sm:space-x-4 space-y-3 sm:space-y-0">
+        <a href="{{route('pages.product')}}" class="px-6 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop now</a>
         <button class="px-6 py-2 border border-black text-black rounded hover:bg-gray-300">Get a Quote</button>
       </div>
     </div>
@@ -39,42 +39,42 @@
     <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition">
       <img src="vinylStickers.jpg" alt="Vinyl Stickers" class="rounded mb-4 mx-auto">
       <p class="text-base font-semibold mb-2">Vinyl Stickers</p>
-      <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop</button>
+      <a href="{{route('pages.product')}}" class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop</a>
     </div>
 
     <!-- Product Card 2 -->
     <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition">
       <img src="/vehicledecal.avif" alt="Vehicle Decals" class="rounded mb-4 mx-auto">
       <p class="text-base font-semibold mb-2">Vehicle Decals</p>
-      <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop</button>
+      <a href="{{route('pages.product')}}" class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop</a>
     </div>
 
     <!-- Product Card 3 -->
     <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition">
       <img src="/bsignage.avif" alt="Business Signages" class="rounded mb-4 mx-auto">
       <p class="text-base font-semibold mb-2">Business Signages</p>
-      <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop</button>
+      <a href="{{route('pages.product')}}" class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop</a>
     </div>
 
     <!-- Product Card 4 -->
     <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition">
       <img src="/walldecal.jpg" alt="Wall Decals" class="rounded mb-4 mx-auto">
       <p class="text-base font-semibold mb-2">Wall Decals</p>
-      <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop</button>
+      <a href="{{route('pages.product')}}" class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop</a>
     </div>
 
     <!-- Product Card 5 -->
     <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition">
       <img src="/lanyard.jpg" alt="ID Lanyards" class="rounded mb-4 mx-auto">
       <p class="text-base font-semibold mb-2">ID Lanyards</p>
-      <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop</button>
+      <a href="{{route('pages.product')}}" class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop</a>
     </div>
 
     <!-- Product Card 6 -->
     <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition">
       <img src="/keychain.jpg" alt="Custom Keychains" class="rounded mb-4 mx-auto">
       <p class="text-base font-semibold mb-2">Custom Keychains</p>
-      <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop</button>
+      <a href="{{route('pages.product')}}" class="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop</a>
     </div>
 
   </div>
@@ -116,7 +116,7 @@
   </div>
 
   <div class="text-center mt-6">
-    <button class="px-6 py-2 bg-black text-white rounded hover:bg-gray-700">View More</button>
+    <a href="{{route('pages.proj')}}" class="inline-block px-6 py-2 bg-black text-white rounded hover:bg-gray-700 transition">View More</a>
   </div>
 </section>
 
