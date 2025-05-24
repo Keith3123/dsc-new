@@ -7,38 +7,71 @@
   <div class="mb-6">
     <h1 class="text-2xl font-bold mb-4">Products</h1>
 
-   <div class="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4 sm:items-end">
-    <div>
-      <label for="category-select" class="text-lg font-medium mb-1 block">
-         Select Product Category:
-      </label>
-         <select id="category-select" class="text-sm text-black px-4 py-2 rounded border border-gray-300 w-full sm:w-64"></select>
-    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4 sm:items-end">
+      <div>
+        <label for="category-select" class="text-lg font-medium mb-1 block">
+          Select Product Category:
+        </label>
+        <select id="category-select" class="text-sm text-black px-4 py-2 rounded border border-gray-300 w-full sm:w-64"></select>
+      </div>
 
-  <div>
-    <button class="bg-white hover:bg-gray-300 text-black font-semibold px-6 py-2 rounded-lg shadow w-full sm:w-auto">
-      Add to Cart
-    </button>
-  </div>
-  </div>
+      <div>
+        <button class="bg-white hover:bg-gray-300 text-black font-semibold px-6 py-2 rounded-lg shadow w-full sm:w-auto">
+          Add to Cart
+        </button>
+      </div>
+    </div>
   </div>
 
   <div id="product-container" class="space-y-8"></div>
 
-  <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
-  <div class="bg-white rounded-lg shadow-lg w-[90%] max-w-md p-6 relative">
-    <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-red-600 text-xl">&times;</button>
-    <img id="modalImage" src="" alt="Product" class="w-full h-48 object-cover rounded mb-4" />
-    <h2 id="modalName" class="text-xl font-bold mb-2"></h2>
-    <p id="modalPrice" class="text-lg text-red-600 mb-4"></p>
-    <button class="bg-white hover:bg-gray-300 text-black px-4 py-2 rounded w-full transition duration-200">
-      Add to Cart
-    </button>
+
+<!-- Product Modal -->
+<div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50" onclick="backgroundClick(event)">
+  <div class="bg-white rounded-xl shadow-lg w-[95%] max-w-4xl p-6 relative flex flex-col md:flex-row gap-6">
+    <!-- Close button -->
+    <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-red-600 text-2xl font-bold">&times;</button>
+
+    <!-- Left: Images -->
+    <div class="w-full md:w-1/2">
+      <img id="modalImage" src="/images/card.avif" alt="Product Image" class="w-full h-64 object-cover rounded-lg mb-4">
+      <div class="flex gap-2">
+      </div>
+    </div>
+
+    <!-- Right: Info -->
+    <div class="w-full md:w-1/2 flex flex-col justify-between">
+      <div>
+        <h2 id="modalName" class="text-2xl font-bold mb-2">
+          <!-- product name -->
+        </h2>
+        <p class="text-gray-600 text-sm mb-2">  ⭐ 3.0 | 2 Ratings | 17 Sold </p>
+        <p id="modalPrice" class="text-xl text-red-600 mb-4">₱116 - ₱230
+          <span class="line-through text-gray-400 ml-2"> ₱500 - ₱800 </span>
+          <span class="text-orange-400 text-sm ml-2"> -77% </span>
+        </p>
+        <p class="text-sm text-gray-700 mb-3">📦 Shipping to <strong>Davao City</strong> — <strong>₱45</strong></p>
+        <p class="text-sm text-green-600 mb-3">✅ Free & Easy Returns</p>
+
+
+        <!-- Quantity -->
+        <div class="mb-4">
+          <label class="font-semibold mr-2">Quantity:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-2 py-1 text-center"> (380 pieces available)
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex gap-4">
+        <button class="flex-1 border border-gray-400 text-black hover:bg-gray-200 py-2 rounded-md">🛒 Add to Cart</button>
+        <button class="flex-1 bg-black text-white hover:bg-gray-700 py-2 rounded-md">Buy Now</button>
+      </div>
+    </div>
   </div>
 </div>
+
 </section>
 @endsection
-
 
 @section('scripts')
 <script>
@@ -128,71 +161,87 @@
     select.appendChild(option);
   });
 
-  // Handle category change
   select.addEventListener('change', (e) => {
     renderProducts(e.target.value);
   });
 
   function renderProducts(categoryIndex) {
-    container.innerHTML = "";
-    const category = categories[categoryIndex];
+  container.innerHTML = "";
+  const category = categories[categoryIndex];
 
-    const section = document.createElement('section');
-    section.className = "mb-6";
+  const section = document.createElement('section');
+  section.className = "mb-6";
 
-    const productGrid = document.createElement('div');
-    productGrid.className = `
-      grid 
-      grid-cols-1 
-      sm:grid-cols-2 
-      md:grid-cols-4 
-      gap-6
+  const productGrid = document.createElement('div');
+  productGrid.className = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6";
+
+  category.products.forEach(product => {
+    const card = document.createElement('div');
+    card.className = `
+      bg-white text-black rounded-lg shadow 
+      flex flex-col items-center p-2 transition 
+      hover:shadow-md hover:scale-[1.02] duration-200
     `;
 
-    category.products.forEach(product => {
-       const card = document.createElement('div');
-      card.className = `
-        bg-white text-black rounded-lg shadow 
-        flex flex-col items-center p-2 transition 
-        hover:shadow-md hover:scale-[1.02] duration-200 cursor-pointer
-      `;
+    card.innerHTML = `
+      <img src="${product.image}" alt="${product.name}" 
+        class="w-full h-32 sm:h-36 md:h-40 object-cover rounded mb-2" />
+      <div class="text-center w-full">
+        <div class="text-sm font-semibold truncate mb-1">${product.name}</div>
+        <div class="text-black text-xs font-bold mb-2">${product.price}</div>
+        <button 
+          class="triggerModal bg-black text-white hover:bg-gray-700 px-4 py-2 rounded-lg w-full"
+          data-name="${product.name}" 
+          data-price="${product.price}" 
+          data-image="${product.image}">
+          View Details
+        </button>
+      </div>
+    `;
 
-      if (product.name === "Pray Before You Ride Sticker") {
-        card.setAttribute("onclick", `openModal("${product.name}", "${product.price}", "${product.image}")`);
-      }
-
-      card.innerHTML = `
-        <img src="${product.image}" alt="${product.name}" 
-            class="w-full h-32 sm:h-36 md:h-40 object-cover rounded mb-2" />
-        <div class="text-center w-full">
-          <div class="text-sm font-semibold truncate">${product.name}</div>
-          <div class="text-xs text-gray-700">${product.price}</div>
-        </div>
-      `;
-
-  productGrid.appendChild(card);
+    productGrid.appendChild(card);
   });
 
-    section.appendChild(productGrid);
-    container.appendChild(section);
-  }
+  section.appendChild(productGrid);
+  container.appendChild(section);
 
-  // Initial category render
+  // Re-bind event listeners after rendering new buttons
+  document.querySelectorAll('.triggerModal').forEach(btn => {
+    btn.addEventListener('click', () => {
+      openModal(
+        btn.dataset.name,
+        btn.dataset.price,
+        btn.dataset.image
+      );
+    });
+  });
+}
+  // Initial render
   renderProducts(0);
   select.value = 0;
 </script>
+
 <script>
   function openModal(name, price, image) {
-    document.getElementById('modalName').textContent = name;
-    document.getElementById('modalPrice').textContent = price;
-    document.getElementById('modalImage').src = image;
-    document.getElementById('productModal').classList.remove('hidden');
-    document.getElementById('productModal').classList.add('flex');
-  }
+  const modal = document.getElementById('productModal');
+  document.getElementById('modalName').textContent = name;
+  document.getElementById('modalPrice').textContent = price;
+  document.getElementById('modalImage').src = image;
+
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+}
 
   function closeModal() {
-    document.getElementById('productModal').classList.add('hidden');
-    document.getElementById('productModal').classList.remove('flex');
+    const modal = document.getElementById('productModal');
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
   }
+
+  function backgroundClick(event) {
+  if (event.target.id === 'productModal') {
+    closeModal();
+  }
+}
 </script>
 @endsection
