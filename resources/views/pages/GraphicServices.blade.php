@@ -52,7 +52,11 @@
       <h2 class="text-xl font-bold mb-2">Vehicle Design</h2>
       <p class="text-gray-600">Custom vehicle wraps and graphics designed for maximum impact on the road.</p>
     </div>
-
   </div>
+  <div class="text-center mt-6">
+      <a href="{{ route('chat.designer') }}" class="inline-block items-center bg-black text-white px-6 py-2 rounded hover:bg-gray-700 transition">
+        Chat to our designer
+      </a>
+    </div>
 </div>
 @endsection

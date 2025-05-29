@@ -13,7 +13,7 @@
         <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-2">Stick with Style. Stand Out Boldly</h1>
         <p class="text-lg md:text-2xl text-gray-800">Custom Stickers, Decals & Graphics Made to Elevate Your Brand, Gear, and Vibe.</p>
       </div>
-      <div class="mt-6 font-medium text-3xl flex-col sm:flew-row items-center sm:space-x-4 space-y-3 sm:space-y-0">
+      <div class="mt-6 font-medium text-3xl flex-col sm:flex-row items-center sm:space-x-4 space-y-3 sm:space-y-0">
         <a href="{{route('pages.product')}}" class="px-6 py-2 bg-black text-white rounded hover:bg-gray-700 transition">Shop now</a>
         <button class="px-6 py-2 border border-black text-black rounded hover:bg-gray-300">Get a Quote</button>
       </div>

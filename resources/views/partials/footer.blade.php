@@ -44,8 +44,8 @@
       <div>
         <h4 class="text-white font-semibold mb-3 hover:underline cursor-pointer text-xl">Connect</h4>
         <ul class="space-y-2">
-          <li><a href="#" class="text-gray-300 hover:text-white">Facebook</a></li>
-          <li><a href="#" class="text-gray-300 hover:text-white">Instagram</a></li>
+          <li><a href="https://www.facebook.com/davaostickercustom" class="text-gray-300 hover:text-white">Facebook</a></li>
+          <li><a href="https://www.instagram.com/davaosticker/" class="text-gray-300 hover:text-white">Instagram</a></li>
           <li><a href="#" class="text-gray-300 hover:text-white">Email Us</a></li>
         </ul>
       </div>
